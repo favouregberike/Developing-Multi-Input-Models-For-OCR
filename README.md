@@ -1,12 +1,12 @@
-# DigiNsure Inc. — Multimodal OCR ID Classification
+# DigiNsure Inc. Multimodal OCR ID Classification
 
 ## Overview
 
-DigiNsure Inc. is modernizing its insurance operations by digitizing historical claim documents. A key challenge in this process is accurately reading and classifying IDs scanned from physical paper documents — distinguishing between **primary** and **secondary** IDs across different insurance types.
+DigiNsure Inc. is modernizing its insurance operations by digitizing historical claim documents. A key challenge in this process is accurately reading and classifying IDs scanned from physical paper documents distinguishing between **primary** and **secondary** IDs across different insurance types.
 
 This project builds a **multimodal deep learning model** that combines:
-- **Image data** — 64×64 grayscale scans of insurance documents
-- **Text data** — one-hot encoded insurance type for each document
+- **Image data** 64×64 grayscale scans of insurance documents
+- **Text data** one-hot encoded insurance type for each document
 
 By fusing these two modalities, the model captures richer contextual information than image recognition alone, improving binary classification accuracy in complex, real-world document scenarios.
 
@@ -14,11 +14,11 @@ By fusing these two modalities, the model captures richer contextual information
 
 ## Problem Statement
 
-Scanned paper documents introduce noise, inconsistent formatting, and variable image quality that make traditional OCR unreliable on its own. Adding the insurance type as a second input modality allows the model to leverage domain context — for example, the structure of a home insurance document differs significantly from a health or auto insurance document — leading to more accurate ID label predictions.
+Scanned paper documents introduce noise, inconsistent formatting, and variable image quality that make traditional OCR unreliable on its own. Adding the insurance type as a second input modality allows the model to leverage domain context; for example, the structure of a home insurance document differs significantly from a health or auto insurance document leading to more accurate ID label predictions.
 
 The model predicts one of two labels per image-insurance type pair:
-- **Primary ID** — the main identifier on the document
-- **Secondary ID** — the supporting identifier on the document
+- **Primary ID** = the main identifier on the document
+- **Secondary ID** = the supporting identifier on the document
 
 ---
 
@@ -107,42 +107,13 @@ digiNsure-ocr/
 └── README.md
 ```
 
----
-
-## Getting Started
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/digiNsure-ocr.git
-cd digiNsure-ocr
-```
-
-### 2. Install dependencies
-```bash
-pip install torch torchvision matplotlib numpy
-```
-
-### 3. Run the training pipeline
-```bash
-python train.py
-```
-
-This will:
-- Load and visualize 5 sample images from the dataset
-- Split data into train/validation sets
-- Initialize and train the `OCRModel` for 10 epochs
-- Print per-epoch loss and accuracy
-- Display training history plots
-
----
-
 ## Dependencies
 
-- `torch` — model definition, training, and inference
-- `matplotlib` — training curve visualization
-- `numpy` — image manipulation
-- `pickle` — dataset loading
-- `project_utils` — custom `ProjectDataset` class (included in repo)
+- `torch` ; model definition, training, and inference
+- `matplotlib`; training curve visualization
+- `numpy` ; image manipulation
+- `pickle` ; dataset loading
+- `project_utils`; custom `ProjectDataset` class (included in repo)
 
 ---
 
